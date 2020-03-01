@@ -73,6 +73,7 @@ export default class App extends Component {
 
   onEditBtnClick = e => {
     window.scrollTo(0, 0);
+    document.body.classList.add("scrollHide");
     const { tasks } = this.state;
     const card = e.target.closest("li");
     const editedTask = tasks.find(task => card.id === task.id);
