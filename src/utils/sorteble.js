@@ -2,15 +2,21 @@ import { Sortable, Plugins } from "@shopify/draggable";
 
 export default function Flexbox() {
   const containers = document.querySelectorAll("#Flexbox");
+  let horizontalRule = true;
+  const windowWidth = window.innerWidth;
 
   if (!containers.length) return;
+
+  if (windowWidth < 646) {
+    horizontalRule = false;
+  }
 
   const sortable = new Sortable(containers, {
     draggable: ".isDraggable",
     swapAnimation: {
       duration: 100,
       easingFunction: "ease-in-out",
-      horizontal: true
+      horizontal: horizontalRule
     },
     mirror: {
       constrainDimensions: true
