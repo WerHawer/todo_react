@@ -1,0 +1,83 @@
+.listElement {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  min-width: 300px;
+  padding: 10px 0 0 10px;
+  margin-right: 1%;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 3px 4px 11px -1px rgba(0, 0, 0, 0.75);
+}
+
+.listElement:nth-child(4n) {
+  margin-right: 0;
+}
+
+.listElement h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.listElement p {
+  margin-bottom: 8px;
+  flex: 1 0 auto;
+}
+.taskDone {
+  composes: listElement;
+  background-color: #00ff37;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.priority {
+  padding: 2px;
+  padding-left: 6px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.priority--normal {
+  composes: priority;
+  background-color: rgb(19, 19, 250);
+  color: #fff;
+}
+
+.priority--low {
+  composes: priority;
+  background-color: rgb(6, 247, 78);
+}
+
+.priority--hight {
+  composes: priority;
+  background-color: rgb(192, 43, 43);
+  color: #fff;
+}
+
+@media (max-width: 1270px) {
+  .listElement:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  .listElement:nth-child(4n) {
+    margin-right: 1%;
+  }
+}
+
+@media (max-width: 960px) {
+  .listElement:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .listElement:nth-child(3n) {
+    margin-right: 1%;
+  }
+}

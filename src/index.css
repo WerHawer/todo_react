@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 100vw;
+  color: #212121;
+  font-family: Roboto;
+  background-color: rgb(243, 239, 239);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+.scrollHide {
+  overflow-y: hidden;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.graped {
+  transform: rotate(5deg);
+}
+
+.isDraggable {
+  cursor: move;
+}
+
+@media (max-width: 1270px) {
+  .wrapper {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 645px) {
+  .wrapper {
+    max-width: 320px;
+  }
+}
