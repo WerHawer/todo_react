@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/todo_react/static/css/main.caea43eb.chunk.css",
+    "main.js": "/todo_react/static/js/main.71cbb529.chunk.js",
+    "main.js.map": "/todo_react/static/js/main.71cbb529.chunk.js.map",
+    "runtime-main.js": "/todo_react/static/js/runtime-main.b6a2f3ad.js",
+    "runtime-main.js.map": "/todo_react/static/js/runtime-main.b6a2f3ad.js.map",
+    "static/css/2.1e4c6142.chunk.css": "/todo_react/static/css/2.1e4c6142.chunk.css",
+    "static/js/2.95d514ed.chunk.js": "/todo_react/static/js/2.95d514ed.chunk.js",
+    "static/js/2.95d514ed.chunk.js.map": "/todo_react/static/js/2.95d514ed.chunk.js.map",
+    "index.html": "/todo_react/index.html",
+    "precache-manifest.5c51b247a4e068180221b759d0aab3de.js": "/todo_react/precache-manifest.5c51b247a4e068180221b759d0aab3de.js",
+    "service-worker.js": "/todo_react/service-worker.js",
+    "static/css/2.1e4c6142.chunk.css.map": "/todo_react/static/css/2.1e4c6142.chunk.css.map",
+    "static/css/main.caea43eb.chunk.css.map": "/todo_react/static/css/main.caea43eb.chunk.css.map",
+    "static/js/2.95d514ed.chunk.js.LICENSE.txt": "/todo_react/static/js/2.95d514ed.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/todo_react/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6a2f3ad.js",
+    "static/css/2.1e4c6142.chunk.css",
+    "static/js/2.95d514ed.chunk.js",
+    "static/css/main.caea43eb.chunk.css",
+    "static/js/main.71cbb529.chunk.js"
+  ]
+}
