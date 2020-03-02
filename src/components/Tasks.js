@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Task from "./Task";
 import styles from "./Tasks.module.css";
 
@@ -13,9 +14,9 @@ const Tasks = ({
   searchStatus
 }) => (
   <div className="wrapper">
-    {tasks.length > 0 && (
-      <ul className={styles.list} id="Flexbox">
-        {tasks.map((task, index) => (
+    <ul className={styles.list} id="Flexbox">
+      {tasks.length > 0 &&
+        tasks.map((task, index) => (
           <Task
             onDeleteClick={onDeleteClick}
             onDoneBtnClick={onDoneBtnClick}
@@ -28,8 +29,8 @@ const Tasks = ({
             searchStatus={searchStatus}
           />
         ))}
-      </ul>
-    )}
+    </ul>
+
     {!tasks.length && !realTasks.length && (
       <p className={styles.noTasks}>You don`t have any created tasks</p>
     )}
@@ -44,3 +45,7 @@ const Tasks = ({
 );
 
 export default Tasks;
+
+Tasks.propTypes = {
+  tasks: PropTypes.array
+};

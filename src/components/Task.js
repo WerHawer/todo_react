@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Task.module.css";
 import TaskDoneBtn from "./TaskDoneBtn";
 import TaskEditBtn from "./TaskEditBtn";
@@ -34,3 +35,13 @@ const Task = ({
 );
 
 export default Task;
+
+Task.propTypes = {
+  onDeleteClick: PropTypes.func.isRequired,
+  onDoneBtnClick: PropTypes.func.isRequired,
+  onEditBtnClick: PropTypes.func.isRequired,
+  task: PropTypes.object,
+  searchStatus: PropTypes.string,
+  searchPriority: PropTypes.string,
+  search: PropTypes.string
+};

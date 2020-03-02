@@ -29,8 +29,6 @@ export default class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (!prevState.tasks.length) this.FlexApp();
-
     if (prevState.tasks !== this.state.tasks)
       localStorage.save("tasksLS", this.state.tasks);
   }

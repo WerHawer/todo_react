@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import TextField from "@material-ui/core/TextField";
 
 export default function TextArea({ name, value, onChange }) {
@@ -18,3 +19,9 @@ export default function TextArea({ name, value, onChange }) {
     </div>
   );
 }
+
+TextArea.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired
+};

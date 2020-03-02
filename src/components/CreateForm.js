@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import shortid from "shortid";
 import SimpleSelect from "./SelectMD";
 import FormSubmitBtn from "./FormSubmitBtn";
@@ -12,6 +13,12 @@ export default class CreateForm extends Component {
     title: "",
     text: "",
     priority: "normal"
+  };
+
+  static propTypes = {
+    onCancelClick: PropTypes.func.isRequired,
+    edit: PropTypes.object,
+    onEditedSubmit: PropTypes.func.isRequired
   };
 
   componentDidMount() {
