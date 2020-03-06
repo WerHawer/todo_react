@@ -22,8 +22,8 @@ const Task = ({
     <span className={styles[`priority--${task.priority}`]}>
       {task.priority}
     </span>
-    <h2>{task.title ? task.title : `Title id-${task.id}`}</h2>
-    <p>{task.text ? task.text : textMask}</p>
+    <h2>{task.title}</h2>
+    <p>{task.text}</p>
     <div className={styles.btnContainer}>
       <Btn
         type="button"
