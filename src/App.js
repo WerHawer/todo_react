@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Tasks from "./components/Tasks";
-import CreateTaskBtn from "./components/CreateTaskBtn";
+import Btn from "./components/Button";
 import CreateForm from "./components/CreateForm";
 import TextInput from "./components/TextInput";
 import SimpleSelect from "./components/SelectMD";
@@ -8,6 +8,8 @@ import styles from "./App.module.css";
 import Flexbox from "./utils/sorteble";
 import filter from "./utils/filter";
 import localStorage from "./utils/localStorage";
+import statusOptions from "./utils/statusOptions";
+import priorityOptions from "./utils/priorityOptions";
 
 export default class App extends Component {
   state = {
@@ -111,13 +113,13 @@ export default class App extends Component {
             <SimpleSelect
               onChange={this.handleChange}
               title="Priority"
-              options={["low", "normal", "hight"]}
+              options={priorityOptions}
               name="searchPriority"
               value={searchPriority}
             />
             <SimpleSelect
               title="Status"
-              options={["open", "done"]}
+              options={statusOptions}
               name="searchStatus"
               onChange={this.handleChange}
               value={searchStatus}
@@ -136,7 +138,14 @@ export default class App extends Component {
           searchStatus={searchStatus}
         />
 
-        <CreateTaskBtn onClick={this.handleOpenFormCreateTask} />
+        <Btn
+          onClick={this.handleOpenFormCreateTask}
+          name="create"
+          variant="contained"
+          color="primary"
+          type="button"
+          size="large"
+        />
 
         {modalIsOpen && (
           <CreateForm

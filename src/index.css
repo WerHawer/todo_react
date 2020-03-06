@@ -31,12 +31,12 @@ body {
   padding-right: 15px;
 }
 
+.isDraggable {
+  cursor: grab;
+}
 .graped {
   transform: rotate(5deg);
-}
-
-.isDraggable {
-  cursor: move;
+  cursor: grabbing;
 }
 
 @media (max-width: 1270px) {

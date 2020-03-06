@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import shortid from "shortid";
 import SimpleSelect from "./SelectMD";
-import FormSubmitBtn from "./FormSubmitBtn";
-import FormCancelBtn from "./FormCancelBtn";
 import TextInput from "./TextInput";
 import TextArea from "./TextArea";
 import styles from "./CreateForm.module.css";
+import Btn from "./Button";
+import priorityOptions from "../utils/priorityOptions";
 
 export default class CreateForm extends Component {
   state = {
@@ -87,7 +87,7 @@ export default class CreateForm extends Component {
             <SimpleSelect
               onChange={this.handleChange}
               title="Priority"
-              options={["low", "normal", "hight"]}
+              options={priorityOptions}
               name="priority"
               value={priority}
             />
@@ -106,8 +106,20 @@ export default class CreateForm extends Component {
           </div>
 
           <div className={styles.btnContainer}>
-            <FormSubmitBtn edit={edit} type="submit" />
-            <FormCancelBtn type="button" onClick={onCancelClick} />
+            <Btn
+              name="save"
+              edit={edit}
+              type="submit"
+              variant="contained"
+              color="primary"
+            />
+            <Btn
+              name="cancel"
+              type="button"
+              onClick={onCancelClick}
+              variant="contained"
+              color="secondary"
+            />
           </div>
         </form>
       </div>

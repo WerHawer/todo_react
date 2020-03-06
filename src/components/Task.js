@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Task.module.css";
-import TaskDoneBtn from "./TaskDoneBtn";
-import TaskEditBtn from "./TaskEditBtn";
-import TaskDeleteBtn from "./TaskDeleteBtn";
 import { textMask } from "../utils/taskTextMask";
+import Btn from "./Button";
 
 const Task = ({
   onDeleteClick,
@@ -27,9 +25,27 @@ const Task = ({
     <h2>{task.title ? task.title : `Title id-${task.id}`}</h2>
     <p>{task.text ? task.text : textMask}</p>
     <div className={styles.btnContainer}>
-      <TaskDoneBtn type="button" onClick={onDoneBtnClick} />
-      <TaskEditBtn type="button" onClick={onEditBtnClick} />
-      <TaskDeleteBtn type="button" onClick={onDeleteClick} />
+      <Btn
+        type="button"
+        onClick={onDoneBtnClick}
+        variant="outlined"
+        color="primary"
+        name="done"
+      />
+      <Btn
+        type="button"
+        onClick={onEditBtnClick}
+        variant="outlined"
+        name="edit"
+      />
+
+      <Btn
+        type="button"
+        onClick={onDeleteClick}
+        variant="outlined"
+        color="secondary"
+        name="delete"
+      />
     </div>
   </li>
 );
