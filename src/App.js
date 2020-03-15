@@ -101,31 +101,33 @@ export default class App extends Component {
 
     return (
       <div>
-        <div className={`wrapper ${styles.appWrapper}`}>
-          <TextInput
-            onChange={this.handleChange}
-            value={search}
-            name="search"
-            type="serch"
-            label="Search by title"
-          />
-          <div className={styles.selectWrapper}>
-            <SimpleSelect
+        {tasks.length >= 2 && (
+          <div className={`wrapper ${styles.appWrapper}`}>
+            <TextInput
               onChange={this.handleChange}
-              title="Priority"
-              options={priorityOptions}
-              name="searchPriority"
-              value={searchPriority}
+              value={search}
+              name="search"
+              type="serch"
+              label="Search by title"
             />
-            <SimpleSelect
-              title="Status"
-              options={statusOptions}
-              name="searchStatus"
-              onChange={this.handleChange}
-              value={searchStatus}
-            />
+            <div className={styles.selectWrapper}>
+              <SimpleSelect
+                onChange={this.handleChange}
+                title="Priority"
+                options={priorityOptions}
+                name="searchPriority"
+                value={searchPriority}
+              />
+              <SimpleSelect
+                title="Status"
+                options={statusOptions}
+                name="searchStatus"
+                onChange={this.handleChange}
+                value={searchStatus}
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         <Tasks
           realTasks={tasks}

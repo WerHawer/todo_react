@@ -27,8 +27,7 @@ body {
 .wrapper {
   margin: 0 auto;
   max-width: 1500px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 20px 15px 0;
 }
 
 .isDraggable {

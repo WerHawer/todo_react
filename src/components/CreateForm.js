@@ -55,33 +55,41 @@ export default class CreateForm extends Component {
     return edit;
   };
 
+  handleEdit = e => {
+    e.preventDefault();
+
+    const { onEditedSubmit } = this.props;
+    const editedObj = this.onEdit();
+    onEditedSubmit(editedObj);
+    document.body.classList.remove("scrollHide");
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const { onSubmitForm } = this.props;
+    const obj = this.onSubmit();
+    onSubmitForm(obj);
+    this.setState({ title: "", text: "" });
+    document.body.classList.remove("scrollHide");
+  };
+
   handleCloseOnGrey = e =>
     e.target === e.currentTarget ? this.props.onCancelClick() : null;
 
   render() {
     const { title, text, priority } = this.state;
-    const { onCancelClick, edit, onEditedSubmit } = this.props;
+    const { onCancelClick, edit } = this.props;
+    const windowWidth = window.innerWidth;
 
     return (
-      <div className={styles.createWrapper} onClick={this.handleCloseOnGrey}>
+      <div
+        className={styles.createWrapper}
+        onClick={windowWidth > 646 ? this.handleCloseOnGrey : null}
+      >
         <form
           className={styles.form}
-          onSubmit={
-            edit
-              ? e => {
-                  e.preventDefault();
-                  const editedObj = this.onEdit();
-                  onEditedSubmit(editedObj);
-                  document.body.classList.remove("scrollHide");
-                }
-              : e => {
-                  e.preventDefault();
-                  const obj = this.onSubmit();
-                  this.props.onSubmitForm(obj);
-                  this.setState({ title: "", text: "" });
-                  document.body.classList.remove("scrollHide");
-                }
-          }
+          onSubmit={edit ? this.handleEdit : this.handleSubmit}
         >
           <div className={styles.priority}>
             <SimpleSelect
